@@ -13,17 +13,7 @@ const MONGO_URI = 'mongodb+srv://aronacosta173:QK8yqNDyQlCdVJ2k@cluster0.rgn5c.m
 // Improved CORS setup with dynamic origins
 const allowedOrigins = ['https://driver-panel.vercel.app/', 'https://manager-panel-main.vercel.app/'];
 
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true // Support for cookies
-}));
+app.use(cors());
 
 // Middleware
 app.use(express.json()); // Parse incoming JSON requests
