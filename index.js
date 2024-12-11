@@ -11,7 +11,7 @@ const PORT = 5000;
 const MONGO_URI = 'mongodb+srv://aronacosta173:QK8yqNDyQlCdVJ2k@cluster0.rgn5c.mongodb.net/ar33?retryWrites=true&w=majority&appName=Cluster0';
 
 // Improved CORS setup with dynamic origins
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
+const allowedOrigins = ['https://driver-panel.vercel.app/', 'https://manager-panel-main.vercel.app/'];
 
 app.use(cors({
   origin: (origin, callback) => {
@@ -53,5 +53,5 @@ app.use((err, req, res, next) => {
 
 // Start Server
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on https://backendserver-4urp.onrender.com:${PORT}`);
 });
