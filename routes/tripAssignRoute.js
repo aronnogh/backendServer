@@ -6,7 +6,6 @@ const {
   updateTripAssignById,
   deleteTripAssignById,
   deleteAllTripAssigns,
-  getTodayTripsCount,
   markTripAsDone
 } = require('../controllers/tripAssignController');
 const TripAssignModel = require('../models/ModelTripAssign');  // Adjust the path as necessary
@@ -23,7 +22,6 @@ router.post('/create-new-trip', createTripAssign);
 router.put('/update/:id', updateTripAssignById);
 router.delete('/delete/:id', deleteTripAssignById);
 router.delete('/deleteall', deleteAllTripAssigns);
-router.delete('/todayTripsCount', getTodayTripsCount);
 router.put('/:id/done', markTripAsDone);
 
 

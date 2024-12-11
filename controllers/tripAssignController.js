@@ -25,6 +25,7 @@ const getAllTripAssigns = async (req, res) => {
   }
 };
 
+
 // Create a new tripAssign
 const createTripAssign = async (req, res) => {
   const { userName, driverName, startLocation, endLocation, date, time, distance } = req.body;
@@ -140,24 +141,6 @@ const upcomingTrips = async (req, res) => {
 };
 
 
-// Get total trips of today
-const getTodayTripsCount = async (req, res) => {
-  try {
-    const startOfDay = moment().startOf('day');
-    const endOfDay = moment().endOf('day');
-
-    const todayTripsCount = await TripAssignModel.countDocuments({
-      date: { $gte: startOfDay, $lte: endOfDay },
-    });
-
-    res.status(200).json({ totalTripsToday: todayTripsCount });
-  } catch (error) {
-    console.error("Error fetching today's trips count: ", error);
-    res.status(500).json({
-      message: "Error fetching today's trips count" });
-  };
-};
-
 
 // Mark trip as done
 const markTripAsDone = async (req, res) => {
@@ -187,6 +170,5 @@ module.exports = {
   deleteAllTripAssigns,
   pastTrips,
   upcomingTrips,
-  getTodayTripsCount,
   markTripAsDone
 };

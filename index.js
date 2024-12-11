@@ -5,7 +5,6 @@ const carRoutes = require('./routes/carRoutes');
 const driverRoutes = require('./routes/driverRoute');
 const tripAssignRoutes = require('./routes/tripAssignRoute');
 const locationDataRoutes = require('./routes/locationDatasRoute');
-const driverAuthRoutes = require('./routes/driverAuthRoutes');
 
 const app = express();
 const PORT = 5000;
